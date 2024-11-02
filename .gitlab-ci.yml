@@ -3,10 +3,6 @@ default:
   services:
     - name: docker:23.0-dind
 
-  before_script:
-    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
-
-
 stages:
   # - pre_build
   # - build
