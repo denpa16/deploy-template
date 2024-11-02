@@ -1,0 +1,30 @@
+default:
+  image: 'docker:23.0-dind'
+  services:
+    - name: docker:23.0-dind
+
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+
+
+stages:
+  # - pre_build
+  # - build
+  # - linter
+  # - test
+  # - security
+  # - release
+  - deploy
+  # - post_release
+  # - backup
+
+include:
+  # - local: '/gitlab/pre_build.yml'
+  # - local: '/gitlab/build.yml'
+  # - local: '/gitlab/linter.yml'
+  # - local: '/gitlab/test.yml'
+  # - local: '/gitlab/release.yml'
+  - local: '/gitlab/deploy.yml'
+  # - local: '/gitlab/post_release.yml'
+  # - local: '/gitlab/backup.yml'
+  # - local: '/gitlab/secret-detection.yml'
