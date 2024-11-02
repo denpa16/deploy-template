@@ -1,0 +1,19 @@
+name: Deploy workflow
+
+on:
+  push:
+    branches:
+      - master
+
+
+env:
+  BOT_TOKEN: ${{ vars.BOT_TOKEN }}
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: docker compose up
+        run: docker compose -f docker-compose.yml -f docker-compose.production.yml up --build --remove-orphans -d
