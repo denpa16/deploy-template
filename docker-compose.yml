@@ -1,0 +1,11 @@
+version: "3.9"
+
+x-app_environment: &app_environment
+  environment:
+    - BOT_TOKEN
+
+services:
+  backend:
+    build:
+      context: ./backend
+    <<: *app_environment

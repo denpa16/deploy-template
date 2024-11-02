@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  backend:
+    restart: unless-stopped
+    volumes:
+      - ./backend/:/app # это чтобы твой код в редакторе синхронился с кодом в контейнере
+    entrypoint: ./entrypoint.sh

@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "Template project"
+version = "0.1.0"
+description = "template project"
+license = "MIT"
+authors=["Denis Pavlov"]
+
+
+[tool.poetry.dependencies]
+python = "3.12.*"
+requests = "2.27.*"
